@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Option 3 — Rounded Square Pulse</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f8faff;font-family:'Space Grotesk',sans-serif;flex-direction:column;gap:40px}
+h2{color:#6b7a99;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase}
+.logo-wrap{display:flex;align-items:center;gap:14px}
+.logo-wrap span{font-size:1.8rem;font-weight:700;color:#0a0c14;letter-spacing:-.02em}
+
+/* Rounded square with orbiting dots */
+.sq-logo{width:52px;height:52px;position:relative}
+.sq-logo svg{width:52px;height:52px;animation:sqIn .6s cubic-bezier(.34,1.56,.64,1) forwards;transform-origin:center}
+
+.sq-bg{rx:12;fill:#1a56f0}
+.sq-letter{fill:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;opacity:0;animation:letterIn .4s ease .5s forwards}
+
+/* Orbit ring */
+.orbit-ring{fill:none;stroke:rgba(26,86,240,.2);stroke-width:1}
+.orbit-dot{fill:#1a56f0;animation:orbit 3s linear infinite}
+.orbit-dot2{fill:#7c3aed;animation:orbit 3s linear infinite reverse;animation-delay:-1.5s}
+
+/* Pulse ring */
+.pulse-ring{fill:none;stroke:#1a56f0;stroke-width:1.5;opacity:0;animation:pulse 2.5s ease-in-out infinite}
+
+/* Corner accents draw in */
+.corner{stroke:#fff;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-dasharray:12;stroke-dashoffset:12;animation:drawCorner .5s ease forwards}
+.corner:nth-of-type(1){animation-delay:.6s}
+.corner:nth-of-type(2){animation-delay:.7s}
+.corner:nth-of-type(3){animation-delay:.8s}
+.corner:nth-of-type(4){animation-delay:.9s}
+
+@keyframes sqIn{0%{transform:scale(0) rotate(-10deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+@keyframes letterIn{to{opacity:1}}
+@keyframes orbit{0%{transform:rotate(0deg) translateX(32px) rotate(0deg)}100%{transform:rotate(360deg) translateX(32px) rotate(-360deg)}}
+@keyframes pulse{0%,100%{opacity:0;transform:scale(.9)}50%{opacity:.25;transform:scale(1.2)}}
+@keyframes drawCorner{to{stroke-dashoffset:0}}
+
+.logo-wrap span{opacity:0;transform:translateX(-10px);animation:slideIn .5s ease .5s forwards}
+.logo-wrap .tech{color:#1a56f0}
+@keyframes slideIn{to{opacity:1;transform:translateX(0)}}
+
+.sizes{display:flex;gap:60px;align-items:end}
+.size-demo{text-align:center}
+.size-demo p{font-size:.75rem;color:#6b7a99;margin-top:8px}
+</style>
+</head>
+<body>
+
+<h2>Option 3 — Rounded Square Pulse</h2>
+
+<div class="logo-wrap">
+  <div class="sq-logo">
+    <svg viewBox="-10 -10 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Pulse ring -->
+      <rect class="pulse-ring" x="2" y="2" width="48" height="48" rx="12"/>
+      <!-- Main square -->
+      <rect class="sq-bg" x="4" y="4" width="44" height="44" rx="11"/>
+      <!-- Corner tech accents -->
+      <path class="corner" d="M14 10 L10 10 L10 14"/>
+      <path class="corner" d="M38 10 L42 10 L42 14"/>
+      <path class="corner" d="M14 42 L10 42 L10 38"/>
+      <path class="corner" d="M38 42 L42 42 L42 38"/>
+      <!-- Letter -->
+      <text x="26" y="34" text-anchor="middle" class="sq-letter">K</text>
+      <!-- Orbiting dots -->
+      <g style="transform-origin:26px 26px">
+        <circle class="orbit-dot" cx="26" cy="26" r="2.5"/>
+      </g>
+      <g style="transform-origin:26px 26px">
+        <circle class="orbit-dot2" cx="26" cy="26" r="2"/>
+      </g>
+    </svg>
+  </div>
+  <span>K<span class="tech">tech</span>ify</span>
+</div>
+
+<div class="sizes">
+  <div class="size-demo">
+    <svg width="32" height="32" viewBox="0 0 52 52" fill="none"><rect fill="#1a56f0" x="4" y="4" width="44" height="44" rx="11"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="26">K</text></svg>
+    <p>32px favicon</p>
+  </div>
+  <div class="size-demo">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none"><rect fill="#1a56f0" x="4" y="4" width="44" height="44" rx="11"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="26">K</text></svg>
+    <p>48px nav</p>
+  </div>
+  <div class="size-demo">
+    <svg width="80" height="80" viewBox="0 0 52 52" fill="none"><rect fill="#1a56f0" x="4" y="4" width="44" height="44" rx="11"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="26">K</text></svg>
+    <p>80px large</p>
+  </div>
+</div>
+
+</body>
+</html>
