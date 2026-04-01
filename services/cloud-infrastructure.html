@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud, Hybrid & On-Premise Infrastructure — Ktechify</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1a56f0;--ink:#0a0c14;--muted:#6b7a99;--bg:#fff;--bg-alt:#f8faff;--violet:#7c3aed;--green:#0ea86e;--font-heading:'Space Grotesk',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;--max-w:1240px;--pad:24px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.7;overflow-x:hidden}img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}.container{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.2}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#fff;box-shadow:0 1px 12px rgba(0,0,0,.08);padding:16px 0}.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-heading);font-size:1.35rem;font-weight:800;color:var(--ink)}.nav-logo svg{width:34px;height:34px}.nav-links{display:flex;align-items:center;gap:32px;list-style:none}.nav-links a{font-size:.925rem;font-weight:500;transition:color .2s}.nav-links a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:8px;font-size:.925rem;font-weight:600;font-family:var(--font-body);cursor:pointer;border:2px solid transparent;transition:all .3s}.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn-primary:hover{background:#1445cc}
+.pill{display:inline-block;padding:6px 16px;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase}.pill-violet{background:rgba(124,58,237,.1);color:var(--violet)}
+.page-hero{padding:140px 0 80px;background:var(--bg-alt)}.page-hero .pill{margin-bottom:16px}.page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:20px;max-width:720px}.page-hero p{font-size:1.15rem;color:var(--muted);max-width:640px}.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.875rem;font-weight:500;color:var(--muted);margin-bottom:24px;transition:color .2s}.back-link:hover{color:var(--blue)}
+.section{padding:80px 0}.section-alt{background:var(--bg-alt)}.section h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:16px}.section .sub{color:var(--muted);font-size:1.05rem;max-width:640px;margin-bottom:40px}
+.grid-2x3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.grid-2x3 .g-card{background:#fff;border-radius:14px;padding:32px;border:1px solid #eef1f6;transition:all .3s}.grid-2x3 .g-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.06);border-color:var(--blue)}.g-card h3{font-size:1.1rem;margin-bottom:8px}.g-card p{font-size:.9rem;color:var(--muted)}
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px}.phase{text-align:center;padding:28px 20px;border-radius:14px;background:var(--bg-alt)}.phase .num{font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--blue);margin-bottom:8px}.phase h4{margin-bottom:6px}.phase p{font-size:.85rem;color:var(--muted)}
+.sectors{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:32px}.sector{display:flex;gap:16px;align-items:flex-start}.sector-icon{width:48px;height:48px;border-radius:12px;background:rgba(124,58,237,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.4rem}.sector h4{font-size:1rem;margin-bottom:4px}.sector p{font-size:.88rem;color:var(--muted)}
+.cta-band{background:var(--ink);padding:80px 0;text-align:center;color:#fff}.cta-band h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:16px}.cta-band p{color:rgba(255,255,255,.6);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
+.footer{background:var(--ink);color:#fff;padding:40px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center}.footer p{font-size:.82rem;color:rgba(255,255,255,.4)}.footer a{color:rgba(255,255,255,.6);font-size:.875rem;transition:color .2s}.footer a:hover{color:#fff}
+@media(max-width:1024px){.grid-2x3{grid-template-columns:repeat(2,1fr)}.phases{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links{display:none}.grid-2x3{grid-template-columns:1fr}.phases{grid-template-columns:1fr}.sectors{grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="container nav-inner">
+<a href="../index.html" class="nav-logo"><svg viewBox="-2 -2 56 56" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a56f0"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0ea86e"/></linearGradient></defs><rect x="4" y="4" width="44" height="44" rx="11" fill="url(#lg)"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="26">K</text></svg><span>K<span style="color:var(--blue)">tech</span>ify</span></a>
+<ul class="nav-links"><li><a href="../index.html#services">Services</a></li><li><a href="../index.html#cases">Case Studies</a></li><li><a href="../index.html#insights">Insights</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+<a href="../index.html#contact" class="btn btn-primary">Get in Touch</a>
+</div></nav>
+
+<section class="page-hero">
+<div class="container reveal">
+<a href="../index.html#services" class="back-link">← Back to Services</a>
+<span class="pill pill-violet">Cloud & Infrastructure</span>
+<h1>Cloud, Hybrid & On-Premise Infrastructure</h1>
+<p>We architect and deliver cloud solutions across AWS, Azure, GCP, private cloud, and hybrid environments — for enterprise, government, and everything in between.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="reveal">Our Approach</h2>
+<p class="sub reveal">Every cloud engagement follows a proven methodology that balances speed with rigour. We don't lift-and-shift — we rearchitect for the target platform.</p>
+<div class="phases">
+<div class="phase reveal"><div class="num">01</div><h4>Discover</h4><p>Assess your current landscape, map dependencies, and classify workloads by migration complexity and business criticality.</p></div>
+<div class="phase reveal"><div class="num">02</div><h4>Architect</h4><p>Design target-state architecture — landing zones, network topology, identity, security controls, and cost models.</p></div>
+<div class="phase reveal"><div class="num">03</div><h4>Build & Migrate</h4><p>Phased migration with automated pipelines, rollback capability, and parallel running to ensure zero disruption to operations.</p></div>
+<div class="phase reveal"><div class="num">04</div><h4>Optimise</h4><p>Continuous right-sizing, reserved instance planning, FinOps governance, and performance tuning post-migration.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section section-alt">
+<div class="container">
+<h2 class="reveal">Capabilities</h2>
+<p class="sub reveal">Deep expertise across the full infrastructure spectrum — not just public cloud.</p>
+<div class="grid-2x3">
+<div class="g-card reveal"><h3>Public Cloud</h3><p>AWS, Azure, and GCP — architecture, migration, and managed operations. Certified architects across all three hyperscalers.</p></div>
+<div class="g-card reveal"><h3>Private Cloud</h3><p>VMware, OpenStack, and Nutanix environments for organisations requiring on-premise control, data sovereignty, or air-gapped operations.</p></div>
+<div class="g-card reveal"><h3>Hybrid & Multi-Cloud</h3><p>Unified management across cloud and on-premise with consistent networking, security policies, and identity governance.</p></div>
+<div class="g-card reveal"><h3>Cloud-Native Development</h3><p>Containers, Kubernetes, serverless, and microservices — building applications that exploit cloud capabilities natively.</p></div>
+<div class="g-card reveal"><h3>Infrastructure as Code</h3><p>Terraform, Bicep, CloudFormation, and Ansible — repeatable, version-controlled infrastructure that eliminates configuration drift.</p></div>
+<div class="g-card reveal"><h3>FinOps & Cost Optimisation</h3><p>Visibility, accountability, and optimisation of cloud spend. We typically deliver 25–40% savings within the first quarter.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="reveal">Sectors We Serve</h2>
+<p class="sub reveal">Our cloud practice has deep experience across regulated and high-security environments.</p>
+<div class="sectors">
+<div class="sector reveal"><div class="sector-icon">🏛️</div><div><h4>Government & Defence</h4><p>Sovereign cloud, IRAP-assessed environments, protected workloads, and PSPF-aligned architectures for federal, state, and defence agencies.</p></div></div>
+<div class="sector reveal"><div class="sector-icon">🏦</div><div><h4>Financial Services</h4><p>High-availability architectures, APRA-compliant environments, disaster recovery, and real-time transaction processing infrastructure.</p></div></div>
+<div class="sector reveal"><div class="sector-icon">🏥</div><div><h4>Healthcare</h4><p>Data residency compliance, HL7/FHIR integration, hybrid architectures for clinical systems, and telemedicine infrastructure.</p></div></div>
+<div class="sector reveal"><div class="sector-icon">⚡</div><div><h4>Energy & Resources</h4><p>Edge computing for remote operations, SCADA system integration, IoT data platforms, and resilient connectivity for distributed sites.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="cta-band">
+<div class="container reveal">
+<h2>Ready to modernise your infrastructure?</h2>
+<p>Book a discovery session with our cloud architects. We'll assess your landscape and map a path forward.</p>
+<a href="../index.html#contact" class="btn btn-primary">Book a Discovery Session</a>
+</div>
+</section>
+
+<footer class="footer"><div class="container footer-inner"><p>&copy; 2026 Ktechify. All rights reserved.</p><a href="../index.html">← Back to homepage</a></div></footer>
+
+<script>
+const r=document.querySelectorAll('.reveal');const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');io.unobserve(el.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});r.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

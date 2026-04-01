@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity & Governance — Ktechify</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1a56f0;--ink:#0a0c14;--muted:#6b7a99;--bg:#fff;--bg-alt:#f8faff;--violet:#7c3aed;--green:#0ea86e;--font-heading:'Space Grotesk',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;--max-w:1240px;--pad:24px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.7;overflow-x:hidden}img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}.container{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.2}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#fff;box-shadow:0 1px 12px rgba(0,0,0,.08);padding:16px 0}.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-heading);font-size:1.35rem;font-weight:800}.nav-logo svg{width:34px;height:34px}.nav-links{display:flex;align-items:center;gap:32px;list-style:none}.nav-links a{font-size:.925rem;font-weight:500;transition:color .2s}.nav-links a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:8px;font-size:.925rem;font-weight:600;font-family:var(--font-body);cursor:pointer;border:2px solid transparent;transition:all .3s}.btn-primary{background:var(--green);color:#fff;border-color:var(--green)}.btn-primary:hover{background:#0c9660}
+.pill{display:inline-block;padding:6px 16px;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase}.pill-green{background:rgba(14,168,110,.1);color:var(--green)}
+.page-hero{padding:140px 0 80px;background:var(--bg-alt)}.page-hero .pill{margin-bottom:16px}.page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:20px;max-width:720px}.page-hero p{font-size:1.15rem;color:var(--muted);max-width:640px}.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.875rem;font-weight:500;color:var(--muted);margin-bottom:24px;transition:color .2s}.back-link:hover{color:var(--green)}
+.section{padding:80px 0}.section-alt{background:var(--bg-alt)}.section h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:16px}.section .sub{color:var(--muted);font-size:1.05rem;max-width:640px;margin-bottom:40px}
+.grid-2x3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.g-card{background:#fff;border-radius:14px;padding:32px;border:1px solid #eef1f6;transition:all .3s}.g-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.06);border-color:var(--green)}.g-card h3{font-size:1.1rem;margin-bottom:8px}.g-card p{font-size:.9rem;color:var(--muted)}
+.frameworks{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px}.fw{padding:28px;border-radius:14px;background:#fff;border:1px solid #eef1f6}.fw h4{font-size:1rem;margin-bottom:6px;color:var(--green)}.fw p{font-size:.88rem;color:var(--muted)}
+.gov-section{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:40px}.gov-section img{border-radius:16px;width:100%;height:360px;object-fit:cover}.gov-text h3{font-size:1.3rem;margin-bottom:12px}.gov-text p{color:var(--muted);font-size:.95rem;margin-bottom:16px}.gov-text ul{list-style:none;display:flex;flex-direction:column;gap:10px}.gov-text li{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--muted)}.gov-text li::before{content:'✓';color:var(--green);font-weight:700}
+.cta-band{background:var(--ink);padding:80px 0;text-align:center;color:#fff}.cta-band h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:16px}.cta-band p{color:rgba(255,255,255,.6);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
+.footer{background:var(--ink);color:#fff;padding:40px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center}.footer p{font-size:.82rem;color:rgba(255,255,255,.4)}.footer a{color:rgba(255,255,255,.6);font-size:.875rem;transition:color .2s}.footer a:hover{color:#fff}
+@media(max-width:1024px){.grid-2x3{grid-template-columns:repeat(2,1fr)}.gov-section{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.grid-2x3,.frameworks{grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="container nav-inner">
+<a href="../index.html" class="nav-logo"><svg viewBox="-2 -2 56 56" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a56f0"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0ea86e"/></linearGradient></defs><rect x="4" y="4" width="44" height="44" rx="11" fill="url(#lg)"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="26">K</text></svg><span>K<span style="color:var(--blue)">tech</span>ify</span></a>
+<ul class="nav-links"><li><a href="../index.html#services">Services</a></li><li><a href="../index.html#cases">Case Studies</a></li><li><a href="../index.html#insights">Insights</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+<a href="../index.html#contact" class="btn btn-primary">Get in Touch</a>
+</div></nav>
+
+<section class="page-hero"><div class="container reveal">
+<a href="../index.html#services" class="back-link">← Back to Services</a>
+<span class="pill pill-green">Security & Risk</span>
+<h1>Cybersecurity & Governance</h1>
+<p>We help organisations build security postures that meet regulatory demands and withstand real-world threats — from boardroom strategy to technical implementation.</p>
+</div></section>
+
+<section class="section"><div class="container">
+<h2 class="reveal">Security Services</h2>
+<p class="sub reveal">End-to-end security consulting — from strategy and architecture through to testing and operations.</p>
+<div class="grid-2x3">
+<div class="g-card reveal"><h3>Security Strategy & Roadmaps</h3><p>Board-level security strategies aligned with business objectives, risk appetite, and regulatory requirements. We build pragmatic roadmaps, not shelf-ware.</p></div>
+<div class="g-card reveal"><h3>Risk Assessment & Gap Analysis</h3><p>Comprehensive assessments against industry frameworks to identify vulnerabilities, quantify risk, and prioritise remediation based on threat likelihood and business impact.</p></div>
+<div class="g-card reveal"><h3>Zero-Trust Architecture</h3><p>Design and implementation of zero-trust security models — identity-centric access control, micro-segmentation, and continuous verification across all environments.</p></div>
+<div class="g-card reveal"><h3>Penetration Testing & Red Team</h3><p>Simulated attacks against your infrastructure, applications, and people. We find the gaps before adversaries do, with actionable remediation guidance.</p></div>
+<div class="g-card reveal"><h3>Incident Response Planning</h3><p>Develop, test, and refine incident response plans so your team knows exactly what to do when — not if — a breach occurs. Includes tabletop exercises and playbook development.</p></div>
+<div class="g-card reveal"><h3>Security Operations</h3><p>SOC design and implementation, SIEM deployment, threat intelligence integration, and managed detection and response for organisations building internal capability.</p></div>
+</div>
+</div></section>
+
+<section class="section section-alt"><div class="container">
+<h2 class="reveal">Compliance & Governance Frameworks</h2>
+<p class="sub reveal">We help you achieve and maintain compliance — not as a checkbox exercise, but as a foundation for genuine security maturity.</p>
+<div class="frameworks">
+<div class="fw reveal"><h4>IRAP & PSPF</h4><p>Information Security Registered Assessors Program assessments and Protective Security Policy Framework alignment for Australian government agencies and their suppliers.</p></div>
+<div class="fw reveal"><h4>Essential Eight</h4><p>Maturity assessment, gap analysis, and implementation support across all eight mitigation strategies — from level zero to level three.</p></div>
+<div class="fw reveal"><h4>ISO 27001 & SOC 2</h4><p>End-to-end certification support — scope definition, policy development, control implementation, internal audit, and external audit preparation.</p></div>
+<div class="fw reveal"><h4>PCI DSS & GDPR</h4><p>Payment card industry compliance for financial services and retailers, and GDPR readiness for organisations with European customers or operations.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2 class="reveal">Government & Defence</h2>
+<p class="sub reveal">We understand the unique security demands of the public sector.</p>
+<div class="gov-section">
+<img src="../images/cyber-split.jpg" alt="Security operations" class="reveal">
+<div class="gov-text reveal">
+<h3>Trusted by agencies at every level</h3>
+<p>Our security consultants hold government security clearances and have extensive experience working within federal, state, and defence environments.</p>
+<ul>
+<li>Security-cleared consultants (NV1, NV2, TSPV)</li>
+<li>Protected and classified environment experience</li>
+<li>IRAP assessors on staff</li>
+<li>Experience with DTA, ASD, and Defence frameworks</li>
+<li>Secure-by-design architecture for citizen-facing services</li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<section class="cta-band"><div class="container reveal">
+<h2>Strengthen your security posture</h2>
+<p>Book a confidential consultation with our security practice leads.</p>
+<a href="../index.html#contact" class="btn btn-primary">Talk to Our Security Team</a>
+</div></section>
+
+<footer class="footer"><div class="container footer-inner"><p>&copy; 2026 Ktechify. All rights reserved.</p><a href="../index.html">← Back to homepage</a></div></footer>
+<script>const r=document.querySelectorAll('.reveal');const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');io.unobserve(el.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});r.forEach(el=>io.observe(el));</script>
+</body>
+</html>
