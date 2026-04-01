@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Option 2 — Shield Tech</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f8faff;font-family:'Space Grotesk',sans-serif;flex-direction:column;gap:40px}
+h2{color:#6b7a99;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase}
+.logo-wrap{display:flex;align-items:center;gap:14px}
+.logo-wrap span{font-size:1.8rem;font-weight:700;color:#0a0c14;letter-spacing:-.02em}
+
+/* Shield draws in */
+.shield-logo{width:52px;height:52px}
+.shield-logo svg{width:52px;height:52px;animation:shieldIn .7s cubic-bezier(.34,1.56,.64,1) forwards;transform-origin:center}
+
+.shield-path{fill:#1a56f0}
+.shield-outline{fill:none;stroke:#1a56f0;stroke-width:1.5;stroke-dasharray:200;stroke-dashoffset:200;animation:drawShield 1.2s ease .3s forwards}
+.shield-k{fill:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;opacity:0;animation:fadeK .4s ease .8s forwards}
+.shield-check{stroke:#fff;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:20;stroke-dashoffset:20;animation:drawCheck .4s ease 1.2s forwards}
+
+/* Gradient shimmer */
+.shimmer{animation:shimmer 3s ease-in-out infinite}
+
+@keyframes shieldIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes drawShield{to{stroke-dashoffset:0}}
+@keyframes fadeK{to{opacity:1}}
+@keyframes drawCheck{to{stroke-dashoffset:0}}
+@keyframes shimmer{0%,100%{filter:brightness(1)}50%{filter:brightness(1.15)}}
+
+.logo-wrap span{opacity:0;transform:translateX(-10px);animation:slideIn .5s ease .5s forwards}
+@keyframes slideIn{to{opacity:1;transform:translateX(0)}}
+
+.sizes{display:flex;gap:60px;align-items:end}
+.size-demo{text-align:center}
+.size-demo p{font-size:.75rem;color:#6b7a99;margin-top:8px}
+</style>
+</head>
+<body>
+
+<h2>Option 2 — Shield Tech</h2>
+
+<div class="logo-wrap">
+  <div class="shield-logo shimmer">
+    <svg viewBox="0 0 52 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#1a56f0"/>
+          <stop offset="100%" stop-color="#7c3aed"/>
+        </linearGradient>
+      </defs>
+      <path class="shield-path" d="M26 2 L48 12 L48 30 C48 42 38 52 26 56 C14 52 4 42 4 30 L4 12 Z" fill="url(#grad)"/>
+      <path class="shield-outline" d="M26 2 L48 12 L48 30 C48 42 38 52 26 56 C14 52 4 42 4 30 L4 12 Z"/>
+      <text x="26" y="36" text-anchor="middle" class="shield-k">K</text>
+    </svg>
+  </div>
+  <span>Ktechify</span>
+</div>
+
+<div class="sizes">
+  <div class="size-demo">
+    <svg width="32" height="36" viewBox="0 0 52 58" fill="none"><defs><linearGradient id="g2" x1="0" y1="0" x2="52" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a56f0"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><path d="M26 2 L48 12 L48 30 C48 42 38 52 26 56 C14 52 4 42 4 30 L4 12 Z" fill="url(#g2)"/><text x="26" y="36" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="22">K</text></svg>
+    <p>32px favicon</p>
+  </div>
+  <div class="size-demo">
+    <svg width="48" height="54" viewBox="0 0 52 58" fill="none"><defs><linearGradient id="g3" x1="0" y1="0" x2="52" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a56f0"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><path d="M26 2 L48 12 L48 30 C48 42 38 52 26 56 C14 52 4 42 4 30 L4 12 Z" fill="url(#g3)"/><text x="26" y="36" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="22">K</text></svg>
+    <p>48px nav</p>
+  </div>
+  <div class="size-demo">
+    <svg width="80" height="90" viewBox="0 0 52 58" fill="none"><defs><linearGradient id="g4" x1="0" y1="0" x2="52" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a56f0"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><path d="M26 2 L48 12 L48 30 C48 42 38 52 26 56 C14 52 4 42 4 30 L4 12 Z" fill="url(#g4)"/><text x="26" y="36" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="22">K</text></svg>
+    <p>80px large</p>
+  </div>
+</div>
+
+</body>
+</html>

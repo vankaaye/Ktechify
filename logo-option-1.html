@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Option 1 — Hexagon Circuit</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f8faff;font-family:'Space Grotesk',sans-serif;flex-direction:column;gap:40px}
+h2{color:#6b7a99;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase}
+.logo-wrap{display:flex;align-items:center;gap:14px}
+.logo-wrap span{font-size:1.8rem;font-weight:700;color:#0a0c14;letter-spacing:-.02em}
+
+/* Hexagon with animated circuit lines */
+.hex-logo{width:52px;height:52px;position:relative}
+.hex-logo svg{width:52px;height:52px}
+.hex-bg{fill:#1a56f0;transition:fill .3s}
+.hex-letter{fill:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px}
+
+/* Circuit lines animate in */
+.circuit{stroke:#fff;stroke-width:1.2;fill:none;stroke-dasharray:60;stroke-dashoffset:60;animation:draw 1.5s ease forwards}
+.circuit:nth-child(2){animation-delay:.2s}
+.circuit:nth-child(3){animation-delay:.4s}
+.circuit:nth-child(4){animation-delay:.6s}
+
+/* Hexagon scales in */
+.hex-logo svg{animation:hexPop .6s cubic-bezier(.34,1.56,.64,1) forwards;transform-origin:center}
+
+/* Pulse glow */
+.hex-glow{animation:glow 2.5s ease-in-out infinite;fill:none;stroke:#1a56f0;stroke-width:1.5;opacity:0}
+
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes hexPop{0%{transform:scale(0) rotate(-30deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+@keyframes glow{0%,100%{opacity:0;transform:scale(1)}50%{opacity:.3;transform:scale(1.15)}}
+
+/* Text slides in */
+.logo-wrap span{opacity:0;transform:translateX(-10px);animation:slideIn .5s ease .4s forwards}
+@keyframes slideIn{to{opacity:1;transform:translateX(0)}}
+
+.sizes{display:flex;gap:60px;align-items:end}
+.size-demo{text-align:center}
+.size-demo p{font-size:.75rem;color:#6b7a99;margin-top:8px}
+</style>
+</head>
+<body>
+
+<h2>Option 1 — Hexagon Circuit</h2>
+
+<div class="logo-wrap">
+  <div class="hex-logo">
+    <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon class="hex-glow" points="26,2 49,14 49,38 26,50 3,38 3,14"/>
+      <polygon class="hex-bg" points="26,4 47,15 47,37 26,48 5,37 5,15"/>
+      <text x="26" y="34" text-anchor="middle" class="hex-letter">K</text>
+      <!-- Circuit accents -->
+      <path class="circuit" d="M15 15 L20 15 L23 18"/>
+      <path class="circuit" d="M37 15 L32 15 L29 18"/>
+      <path class="circuit" d="M15 37 L20 37 L23 34"/>
+      <path class="circuit" d="M37 37 L32 37 L29 34"/>
+    </svg>
+  </div>
+  <span>Ktechify</span>
+</div>
+
+<div class="sizes">
+  <div class="size-demo">
+    <svg width="32" height="32" viewBox="0 0 52 52" fill="none"><polygon fill="#1a56f0" points="26,4 47,15 47,37 26,48 5,37 5,15"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="24">K</text></svg>
+    <p>32px favicon</p>
+  </div>
+  <div class="size-demo">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none"><polygon fill="#1a56f0" points="26,4 47,15 47,37 26,48 5,37 5,15"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="24">K</text></svg>
+    <p>48px nav</p>
+  </div>
+  <div class="size-demo">
+    <svg width="80" height="80" viewBox="0 0 52 52" fill="none"><polygon fill="#1a56f0" points="26,4 47,15 47,37 26,48 5,37 5,15"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="24">K</text></svg>
+    <p>80px large</p>
+  </div>
+</div>
+
+</body>
+</html>
