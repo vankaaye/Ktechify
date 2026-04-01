@@ -595,16 +595,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
         </div>
       </div>
       <div class="form-card reveal" style="transition-delay:.1s">
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-row">
-            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="John" required></div>
-            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Doe" required></div>
+            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="John" required></div>
+            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Doe" required></div>
           </div>
-          <div class="form-group"><label for="email">Work Email</label><input type="email" id="email" placeholder="john@company.com" required></div>
-          <div class="form-group"><label for="company">Company</label><input type="text" id="company" placeholder="Company name"></div>
+          <div class="form-group"><label for="email">Work Email</label><input type="email" id="email" name="email" placeholder="john@company.com" required></div>
+          <div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Company name"></div>
           <div class="form-group">
             <label for="service">Service</label>
-            <select id="service">
+            <select id="service" name="service">
               <option value="">How can we help?</option>
               <option>Cloud &amp; Infrastructure</option>
               <option>Cybersecurity &amp; Governance</option>
@@ -615,7 +615,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
               <option>General Enquiry</option>
             </select>
           </div>
-          <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell us about your project or challenge..."></textarea></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project or challenge..."></textarea></div>
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
@@ -757,7 +757,7 @@ hamburger.addEventListener('click',()=>mobileMenu.classList.add('open'));
 mobileClose.addEventListener('click',()=>mobileMenu.classList.remove('open'));
 function closeMobile(){mobileMenu.classList.remove('open')}
 
-// Form
+// Form — Formspree handles submission via AJAX
 document.getElementById('contactForm').addEventListener('submit',async e=>{
   e.preventDefault();
   const form=e.target;
@@ -765,17 +765,10 @@ document.getElementById('contactForm').addEventListener('submit',async e=>{
   const orig=btn.textContent;
   btn.textContent='Sending...';btn.disabled=true;
   try{
-    const res=await fetch('/api/contact',{
+    const res=await fetch(form.action,{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        fname:form.querySelector('#fname').value,
-        lname:form.querySelector('#lname').value,
-        email:form.querySelector('#email').value,
-        company:form.querySelector('#company').value,
-        service:form.querySelector('#service').value,
-        message:form.querySelector('#message').value
-      })
+      body:new FormData(form),
+      headers:{'Accept':'application/json'}
     });
     if(res.ok){
       btn.textContent='Sent!';btn.style.background='var(--green)';btn.style.borderColor='var(--green)';
