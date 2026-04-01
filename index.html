@@ -29,6 +29,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-heading);font-size:1.35rem;font-weight:800;color:var(--ink)}
 .nav-logo svg{width:34px;height:34px}
+.logo-pulse{opacity:0;animation:logoPulse 2.5s ease-in-out infinite}
+.logo-corner{stroke-dasharray:12;stroke-dashoffset:12;animation:drawCorner .5s ease .3s forwards}
+@keyframes logoPulse{0%,100%{opacity:0;transform:scale(.95)}50%{opacity:.3;transform:scale(1.12)}}
+@keyframes drawCorner{to{stroke-dashoffset:0}}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
 .nav-links a{font-size:.925rem;font-weight:500;color:var(--ink);transition:color .2s}
 .nav-links a:hover{color:var(--blue)}
@@ -103,6 +107,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 /* ===== SPLIT SECTIONS ===== */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .split img{width:100%;height:440px;object-fit:cover;border-radius:16px}
+.cyber-split img{order:2}
+.cyber-split .split-text{order:1}
 .split-text h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;margin-bottom:28px}
 .split-text p.sub{font-size:1rem;color:var(--muted);margin-bottom:32px}
 .feature-list{list-style:none;display:flex;flex-direction:column;gap:20px;margin-bottom:36px}
@@ -190,6 +196,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
   .cards-grid{grid-template-columns:repeat(2,1fr)}
   .numbers-grid{grid-template-columns:repeat(2,1fr);gap:40px}
   .split img{height:320px}
+  .cyber-split img{order:0}
+  .cyber-split .split-text{order:1}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
@@ -218,8 +226,23 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#" class="nav-logo">
-      <svg viewBox="0 0 40 40" fill="none"><polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="#1a56f0"/><text x="20" y="26" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="Inter,sans-serif">K</text></svg>
-      Ktechify
+      <svg class="logo-icon" viewBox="-2 -2 56 56" fill="none">
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1a56f0"/>
+            <stop offset="50%" stop-color="#7c3aed"/>
+            <stop offset="100%" stop-color="#0ea86e"/>
+          </linearGradient>
+        </defs>
+        <rect class="logo-pulse" x="2" y="2" width="48" height="48" rx="12" fill="none" stroke="url(#logoGrad)" stroke-width="1.5"/>
+        <rect x="4" y="4" width="44" height="44" rx="11" fill="url(#logoGrad)"/>
+        <path class="logo-corner" d="M14 10 L10 10 L10 14" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path class="logo-corner" d="M38 10 L42 10 L42 14" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path class="logo-corner" d="M14 42 L10 42 L10 38" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path class="logo-corner" d="M38 42 L42 42 L42 38" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="26">K</text>
+      </svg>
+      <span>K<span style="color:var(--blue)">tech</span>ify</span>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -265,7 +288,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
       </div>
     </div>
     <div class="hero-right reveal" style="transition-delay:.15s">
-      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&auto=format&fit=crop&q=85" alt="Modern office technology team" loading="eager">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop&q=85" alt="Modern technology workspace" loading="eager">
       <div class="hero-badge">🟢 All systems operational</div>
     </div>
   </div>
@@ -414,8 +437,9 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 <!-- CYBERSECURITY SPLIT -->
 <section class="section" style="background:var(--bg-alt)">
   <div class="container">
-    <div class="split">
-      <div class="split-text reveal">
+    <div class="split cyber-split">
+      <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&auto=format&fit=crop&q=85" alt="Cybersecurity operations center" class="reveal">
+      <div class="split-text reveal" style="transition-delay:.1s">
         <span class="pill pill-green">Cybersecurity</span>
         <h2>Cybersecurity that never sleeps</h2>
         <p class="sub">Layered defences, continuous monitoring, and compliance automation to keep your data and reputation safe.</p>
@@ -435,7 +459,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
         </ul>
         <a href="#contact" class="btn btn-primary" style="background:var(--green);border-color:var(--green)">Secure your business</a>
       </div>
-      <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&auto=format&fit=crop&q=85" alt="Cybersecurity operations center" class="reveal" style="transition-delay:.1s">
     </div>
   </div>
 </section>
@@ -579,8 +602,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="nav-logo" style="color:#fff">
-          <svg viewBox="0 0 40 40" fill="none" width="34" height="34"><polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="#1a56f0"/><text x="20" y="26" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="Inter,sans-serif">K</text></svg>
-          Ktechify
+          <svg viewBox="-2 -2 56 56" fill="none" width="34" height="34">
+            <defs><linearGradient id="logoGradF" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a56f0"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0ea86e"/></linearGradient></defs>
+            <rect x="4" y="4" width="44" height="44" rx="11" fill="url(#logoGradF)"/>
+            <path d="M14 10 L10 10 L10 14" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M38 10 L42 10 L42 14" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M14 42 L10 42 L10 38" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M38 42 L42 42 L42 38" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="26">K</text>
+          </svg>
+          <span>K<span style="color:#1a56f0">tech</span>ify</span>
         </a>
         <p>Enterprise IT services that keep your business secure, efficient, and always online.</p>
       </div>
