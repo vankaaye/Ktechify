@@ -758,11 +758,36 @@ mobileClose.addEventListener('click',()=>mobileMenu.classList.remove('open'));
 function closeMobile(){mobileMenu.classList.remove('open')}
 
 // Form
-document.getElementById('contactForm').addEventListener('submit',e=>{
+document.getElementById('contactForm').addEventListener('submit',async e=>{
   e.preventDefault();
-  const btn=e.target.querySelector('button[type="submit"]');
-  btn.textContent='Sent!';btn.style.background='var(--green)';btn.style.borderColor='var(--green)';
-  setTimeout(()=>{btn.textContent='Send Message';btn.style.background='';btn.style.borderColor=''},2500);
+  const form=e.target;
+  const btn=form.querySelector('button[type="submit"]');
+  const orig=btn.textContent;
+  btn.textContent='Sending...';btn.disabled=true;
+  try{
+    const res=await fetch('/api/contact',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        fname:form.querySelector('#fname').value,
+        lname:form.querySelector('#lname').value,
+        email:form.querySelector('#email').value,
+        company:form.querySelector('#company').value,
+        service:form.querySelector('#service').value,
+        message:form.querySelector('#message').value
+      })
+    });
+    if(res.ok){
+      btn.textContent='Sent!';btn.style.background='var(--green)';btn.style.borderColor='var(--green)';
+      form.reset();
+    }else{
+      btn.textContent='Error — try again';btn.style.background='#dc2626';btn.style.borderColor='#dc2626';
+    }
+  }catch(err){
+    btn.textContent='Error — try again';btn.style.background='#dc2626';btn.style.borderColor='#dc2626';
+  }
+  btn.disabled=false;
+  setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.style.borderColor=''},3000);
 });
 </script>
 </body>
