@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare Digital Transformation — Ktechify</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1a56f0;--ink:#0a0c14;--muted:#6b7a99;--bg:#fff;--bg-alt:#f8faff;--violet:#7c3aed;--green:#0ea86e;--font-heading:'Space Grotesk',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;--max-w:1240px;--pad:24px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.7;overflow-x:hidden}img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}.container{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}h1,h2,h3{font-family:var(--font-heading);line-height:1.2}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#fff;box-shadow:0 1px 12px rgba(0,0,0,.08);padding:16px 0}.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-heading);font-size:1.35rem;font-weight:800}.nav-logo svg{width:34px;height:34px}.nav-links{display:flex;align-items:center;gap:32px;list-style:none}.nav-links a{font-size:.925rem;font-weight:500;transition:color .2s}.nav-links a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:8px;font-size:.925rem;font-weight:600;font-family:var(--font-body);cursor:pointer;border:2px solid transparent;transition:all .3s}.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn-primary:hover{background:#1445cc}
+.pill{display:inline-block;padding:6px 16px;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase}.pill-blue{background:rgba(26,86,240,.1);color:var(--blue)}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.875rem;font-weight:500;color:var(--muted);margin-bottom:24px;transition:color .2s}.back-link:hover{color:var(--blue)}
+.case-hero{padding:140px 0 0;background:var(--bg-alt)}.case-hero h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;margin:16px 0 20px;max-width:720px}.case-hero p{font-size:1.1rem;color:var(--muted);max-width:600px;margin-bottom:40px}.case-hero img{width:100%;max-height:420px;object-fit:cover;border-radius:16px 16px 0 0}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:40px 0;text-align:center;border-bottom:1px solid #eef1f6;margin-bottom:60px}.stat .num{font-family:var(--font-heading);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--blue)}.stat .label{font-size:.85rem;color:var(--muted);margin-top:4px}
+.section{padding:60px 0}.section h2{font-size:1.6rem;font-weight:700;margin-bottom:16px}.section p,.section li{font-size:.95rem;color:var(--muted);margin-bottom:12px}.section ul{list-style:none;padding:0}.section li{padding-left:20px;position:relative}.section li::before{content:'→';position:absolute;left:0;color:var(--blue)}
+.quote-block{background:var(--bg-alt);border-left:4px solid var(--blue);padding:32px 40px;border-radius:0 12px 12px 0;margin:48px 0}.quote-block blockquote{font-size:1.1rem;font-style:italic;margin-bottom:12px}.quote-block .attr{font-size:.875rem;font-weight:600;color:var(--muted)}
+.content{max-width:800px;margin:0 auto}
+.cta-band{background:var(--ink);padding:80px 0;text-align:center;color:#fff}.cta-band h2{font-size:clamp(1.8rem,3.5vw,2.4rem);margin-bottom:16px}.cta-band p{color:rgba(255,255,255,.6);margin-bottom:32px}
+.footer{background:var(--ink);color:#fff;padding:40px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center}.footer p{font-size:.82rem;color:rgba(255,255,255,.4)}.footer a{color:rgba(255,255,255,.6);font-size:.875rem}.footer a:hover{color:#fff}
+@media(max-width:768px){.nav-links{display:none}.stats-bar{grid-template-columns:repeat(2,1fr)}.footer-inner{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="container nav-inner"><a href="../index.html" class="nav-logo"><svg viewBox="-2 -2 56 56" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a56f0"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0ea86e"/></linearGradient></defs><rect x="4" y="4" width="44" height="44" rx="11" fill="url(#lg)"/><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk" font-weight="700" font-size="26">K</text></svg><span>K<span style="color:var(--blue)">tech</span>ify</span></a><ul class="nav-links"><li><a href="../index.html#services">Services</a></li><li><a href="../index.html#cases">Case Studies</a></li><li><a href="../index.html#insights">Insights</a></li><li><a href="../index.html#contact">Contact</a></li></ul><a href="../index.html#contact" class="btn btn-primary">Get in Touch</a></div></nav>
+
+<section class="case-hero"><div class="container reveal">
+<a href="../index.html#cases" class="back-link">← Back to Case Studies</a>
+<span class="pill pill-blue">Healthcare</span>
+<h1>Digital transformation for a state health network</h1>
+<p>Modernising legacy systems and connecting 40+ facilities with a unified hybrid cloud platform and integrated EHR system.</p>
+</div><img src="../images/case-uptime.jpg" alt="Healthcare digital transformation"></section>
+
+<div class="container content">
+<div class="stats-bar reveal">
+<div class="stat"><div class="num">40+</div><div class="label">Facilities connected</div></div>
+<div class="stat"><div class="num">15K</div><div class="label">Staff onboarded</div></div>
+<div class="stat"><div class="num">4</div><div class="label">Legacy systems retired</div></div>
+<div class="stat"><div class="num">18 mo</div><div class="label">Program duration</div></div>
+</div>
+
+<div class="section reveal"><h2>The Challenge</h2>
+<p>A state health network operating across 40+ facilities — including major metropolitan hospitals, regional clinics, and community health centres — was running critical clinical systems on end-of-life infrastructure. Patient records were siloed between facilities, clinicians had no real-time access to cross-facility data, and four separate legacy systems were approaching vendor end-of-support.</p>
+<p>The network needed a unified platform that could handle clinical data with strict privacy requirements (Australian Privacy Principles), integrate with existing medical devices, and scale to support telehealth services that had grown 800% during the pandemic.</p>
+</div>
+
+<div class="section reveal"><h2>Our Approach</h2>
+<ul>
+<li>Engaged 200+ stakeholders across clinical, administrative, and IT teams to map workflows and pain points at each facility type</li>
+<li>Conducted a data classification exercise covering 15+ years of patient records across four legacy systems</li>
+<li>Designed a hybrid cloud architecture — Azure for general workloads, on-premise for sensitive clinical data requiring data sovereignty</li>
+<li>Built an integration layer using HL7 FHIR APIs to connect the new platform with existing medical devices and third-party clinical systems</li>
+<li>Ran a pilot across 5 facilities before full rollout, iterating based on clinician feedback</li>
+<li>Delivered a training program for 15,000+ staff, tailored by role (clinicians, admin, IT)</li>
+</ul>
+</div>
+
+<div class="section reveal"><h2>The Solution</h2>
+<p>The delivered platform included a unified EHR integration layer providing clinicians with real-time access to patient records across all 40+ facilities for the first time. A purpose-built telehealth infrastructure supported video consultations, remote monitoring, and digital triage — reducing unnecessary ED presentations for regional patients.</p>
+<p>Real-time clinical dashboards gave hospital administrators visibility into bed occupancy, ED wait times, and staffing levels. Automated backup and disaster recovery reduced RTO from days to under 4 hours, with geo-redundant storage ensuring no single point of failure.</p>
+</div>
+
+<div class="section reveal"><h2>Results & Impact</h2>
+<ul>
+<li>40+ facilities connected on a single unified platform</li>
+<li>4 legacy systems successfully decommissioned with zero data loss</li>
+<li>30% improvement in clinician access time to patient records</li>
+<li>Telehealth consultations now account for 25% of outpatient appointments</li>
+<li>Disaster recovery improved from days to under 4 hours</li>
+<li>$4.2M annual savings from retired legacy licensing and infrastructure</li>
+</ul>
+</div>
+
+<div class="quote-block reveal">
+<blockquote>"Their security team took us from ad-hoc practices to Essential Eight maturity level three. Thorough, practical, and genuinely expert."</blockquote>
+<div class="attr">— Andrew Morales, CISO, National Health Services Group</div>
+</div>
+</div>
+
+<section class="cta-band"><div class="container reveal"><h2>Planning a digital transformation?</h2><p>Talk to our advisory team about your environment.</p><a href="../index.html#contact" class="btn btn-primary">Book a Discovery Session</a></div></section>
+<footer class="footer"><div class="container footer-inner"><p>&copy; 2026 Ktechify. All rights reserved.</p><a href="../index.html">← Back to homepage</a></div></footer>
+<script>const r=document.querySelectorAll('.reveal');const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');io.unobserve(el.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});r.forEach(el=>io.observe(el));</script>
+</body></html>
