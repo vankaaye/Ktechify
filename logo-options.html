@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ktechify — Logo Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#fff;font-family:'Space Grotesk',sans-serif;padding:40px 20px}
+h1{text-align:center;font-size:2.5rem;margin-bottom:10px}
+p.sub{text-align:center;color:#94a3b8;margin-bottom:50px;font-size:1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:40px;max-width:1400px;margin:0 auto}
+.card{background:#111827;border-radius:16px;padding:30px;text-align:center;border:1px solid rgba(255,255,255,.08);transition:border-color .3s}
+.card:hover{border-color:rgba(26,86,240,.4)}
+.card h3{margin-top:20px;font-size:1rem;color:#94a3b8}
+.card .num{font-size:.85rem;color:#1a56f0;font-weight:700;margin-bottom:15px}
+.logo-row{display:flex;align-items:center;justify-content:center;gap:14px;min-height:70px}
+.logo-row span{font-size:1.5rem;font-weight:800;color:#fff}
+.logo-row span em{font-style:normal;color:#1a56f0}
+
+/* ===== LOGO 1: Current (gradient square + corners + pulse) ===== */
+.l1-pulse{opacity:0;animation:l1Pulse 2.5s ease-in-out infinite}
+.l1-corner{stroke-dasharray:12;stroke-dashoffset:12;animation:l1Draw .5s ease .3s forwards}
+@keyframes l1Pulse{0%,100%{opacity:0;transform:scale(.95)}50%{opacity:.3;transform:scale(1.12)}}
+@keyframes l1Draw{to{stroke-dashoffset:0}}
+
+/* ===== LOGO 2: Hexagon tech ===== */
+.l2-hex{animation:l2Spin 10s linear infinite}
+.l2-inner{animation:l2Pulse 3s ease-in-out infinite}
+@keyframes l2Spin{to{transform:rotate(360deg)}}
+@keyframes l2Pulse{0%,100%{opacity:.6}50%{opacity:1}}
+
+/* ===== LOGO 3: Orbiting rings (atom style) ===== */
+.l3-ring1{animation:l3Orbit1 4s linear infinite;transform-origin:26px 26px}
+.l3-ring2{animation:l3Orbit2 5s linear infinite;transform-origin:26px 26px}
+.l3-ring3{animation:l3Orbit3 6s linear infinite;transform-origin:26px 26px}
+@keyframes l3Orbit1{to{transform:rotate(360deg)}}
+@keyframes l3Orbit2{to{transform:rotate(-360deg)}}
+@keyframes l3Orbit3{to{transform:rotate(360deg)}}
+
+/* ===== LOGO 4: Glitch effect ===== */
+.l4-main{animation:l4Glitch 3s ease-in-out infinite}
+.l4-r{animation:l4GlitchR 3s ease-in-out infinite}
+.l4-b{animation:l4GlitchB 3s ease-in-out infinite}
+@keyframes l4Glitch{0%,100%{transform:translate(0)}8%{transform:translate(-2px,1px)}10%{transform:translate(0)}42%{transform:translate(1px,-1px)}44%{transform:translate(0)}}
+@keyframes l4GlitchR{0%,100%{transform:translate(0);opacity:0}7%{transform:translate(3px,-1px);opacity:.7}11%{opacity:0}41%{transform:translate(-2px,2px);opacity:.7}45%{opacity:0}}
+@keyframes l4GlitchB{0%,100%{transform:translate(0);opacity:0}7%{transform:translate(-3px,1px);opacity:.7}11%{opacity:0}41%{transform:translate(2px,-2px);opacity:.7}45%{opacity:0}}
+
+/* ===== LOGO 5: Circuit board ===== */
+.l5-path{stroke-dasharray:200;stroke-dashoffset:200;animation:l5Trace 3s ease-in-out infinite}
+.l5-dot{animation:l5Blink 2s ease-in-out infinite}
+@keyframes l5Trace{0%{stroke-dashoffset:200}50%{stroke-dashoffset:0}100%{stroke-dashoffset:-200}}
+@keyframes l5Blink{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ===== LOGO 6: Morphing blob ===== */
+.l6-blob{animation:l6Morph 6s ease-in-out infinite alternate}
+@keyframes l6Morph{0%{d:path('M26,8 C38,8 44,14 44,26 C44,38 38,44 26,44 C14,44 8,38 8,26 C8,14 14,8 26,8Z')}50%{d:path('M26,6 C40,10 46,18 42,28 C38,40 32,46 22,42 C10,38 6,30 10,20 C14,10 20,6 26,6Z')}100%{d:path('M26,8 C36,6 46,16 44,28 C42,40 34,46 22,44 C10,42 6,32 8,20 C10,10 18,8 26,8Z')}}
+
+/* ===== LOGO 7: Neon glow ===== */
+.l7-glow{animation:l7Neon 2s ease-in-out infinite alternate}
+@keyframes l7Neon{0%{filter:drop-shadow(0 0 2px #1a56f0) drop-shadow(0 0 6px #1a56f0)}100%{filter:drop-shadow(0 0 8px #1a56f0) drop-shadow(0 0 20px #7c3aed) drop-shadow(0 0 40px #1a56f044)}}
+
+/* ===== LOGO 8: Rotating 3D cube ===== */
+.l8-cube{animation:l8Rotate 8s linear infinite;transform-origin:26px 26px}
+@keyframes l8Rotate{to{transform:rotate(360deg)}}
+.l8-face1{animation:l8F1 4s ease-in-out infinite alternate}
+.l8-face2{animation:l8F2 4s ease-in-out infinite alternate}
+@keyframes l8F1{0%{opacity:.8}100%{opacity:.3}}
+@keyframes l8F2{0%{opacity:.3}100%{opacity:.8}}
+
+/* ===== LOGO 9: Shield with scan line ===== */
+.l9-scan{animation:l9Scan 2.5s ease-in-out infinite}
+@keyframes l9Scan{0%{transform:translateY(-16px);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateY(20px);opacity:0}}
+
+/* ===== LOGO 10: DNA / double helix ===== */
+.l10-strand{animation:l10Rotate 3s linear infinite}
+@keyframes l10Rotate{to{transform:rotate(360deg)}}
+
+/* ===== LOGO 11: Radar / pulse ===== */
+.l11-ring1{animation:l11Expand 2s ease-out infinite}
+.l11-ring2{animation:l11Expand 2s ease-out .5s infinite}
+.l11-ring3{animation:l11Expand 2s ease-out 1s infinite}
+@keyframes l11Expand{0%{r:4;opacity:.8}100%{r:22;opacity:0}}
+
+/* ===== LOGO 12: Geometric K lettermark ===== */
+.l12-arm1{animation:l12Arm 2s ease-in-out infinite alternate;transform-origin:24px 26px}
+.l12-arm2{animation:l12Arm2 2s ease-in-out infinite alternate;transform-origin:24px 26px}
+@keyframes l12Arm{0%{transform:rotate(0)}100%{transform:rotate(5deg)}}
+@keyframes l12Arm2{0%{transform:rotate(0)}100%{transform:rotate(-5deg)}}
+
+/* ===== LOGO 13: Neural network nodes ===== */
+.l13-node{animation:l13Pulse 2s ease-in-out infinite}
+.l13-node:nth-child(2){animation-delay:.3s}
+.l13-node:nth-child(3){animation-delay:.6s}
+.l13-node:nth-child(4){animation-delay:.9s}
+.l13-node:nth-child(5){animation-delay:1.2s}
+@keyframes l13Pulse{0%,100%{r:3;fill:#1a56f0}50%{r:4.5;fill:#7c3aed}}
+
+/* ===== LOGO 14: Infinity loop ===== */
+.l14-path{stroke-dasharray:120;animation:l14Flow 3s linear infinite}
+@keyframes l14Flow{to{stroke-dashoffset:-240}}
+
+/* ===== LOGO 15: Stacked layers ===== */
+.l15-layer{animation:l15Float 3s ease-in-out infinite}
+.l15-l2{animation-delay:.2s}
+.l15-l3{animation-delay:.4s}
+@keyframes l15Float{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<h1>Ktechify Logo Options</h1>
+<p class="sub">Pick a number — each shown at navbar size with the brand name</p>
+<div class="grid">
+
+<!-- LOGO 1: Current -->
+<div class="card">
+  <div class="num">Option 1 — Current</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="-2 -2 56 56" fill="none">
+      <defs><linearGradient id="lg1" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a56f0"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0ea86e"/></linearGradient></defs>
+      <rect class="l1-pulse" x="2" y="2" width="48" height="48" rx="12" fill="none" stroke="url(#lg1)" stroke-width="1.5"/>
+      <rect x="4" y="4" width="44" height="44" rx="11" fill="url(#lg1)"/>
+      <path class="l1-corner" d="M14 10 L10 10 L10 14" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path class="l1-corner" d="M38 10 L42 10 L42 14" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path class="l1-corner" d="M14 42 L10 42 L10 38" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path class="l1-corner" d="M38 42 L42 42 L42 38" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="26">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Gradient square + corner brackets + pulse ring</h3>
+</div>
+
+<!-- LOGO 2: Hexagon -->
+<div class="card">
+  <div class="num">Option 2 — Hexagon Tech</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <defs><linearGradient id="lg2" x1="0" y1="0" x2="52" y2="52"><stop offset="0%" stop-color="#1a56f0"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
+      <polygon class="l2-hex" points="26,4 46,15 46,37 26,48 6,37 6,15" fill="url(#lg2)" style="transform-origin:26px 26px"/>
+      <polygon class="l2-inner" points="26,12 38,19 38,33 26,40 14,33 14,19" fill="none" stroke="#fff" stroke-width="1" opacity=".5"/>
+      <text x="26" y="32" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="22">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Rotating hexagon with inner wireframe</h3>
+</div>
+
+<!-- LOGO 3: Orbiting rings -->
+<div class="card">
+  <div class="num">Option 3 — Atomic Orbit</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="8" fill="#1a56f0"/>
+      <text x="26" y="31" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="12">K</text>
+      <ellipse class="l3-ring1" cx="26" cy="26" rx="22" ry="8" stroke="#1a56f0" stroke-width="1" fill="none" opacity=".6"/>
+      <ellipse class="l3-ring2" cx="26" cy="26" rx="22" ry="8" stroke="#7c3aed" stroke-width="1" fill="none" opacity=".6" transform="rotate(60 26 26)"/>
+      <ellipse class="l3-ring3" cx="26" cy="26" rx="22" ry="8" stroke="#0ea86e" stroke-width="1" fill="none" opacity=".6" transform="rotate(120 26 26)"/>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Atom with 3 orbiting electron rings</h3>
+</div>
+
+<!-- LOGO 4: Glitch -->
+<div class="card">
+  <div class="num">Option 4 — Glitch</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <rect x="4" y="4" width="44" height="44" rx="8" fill="#111827" stroke="#1a56f0" stroke-width="1.5"/>
+      <g class="l4-main"><text x="26" y="34" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="28">K</text></g>
+      <g class="l4-r"><text x="26" y="34" text-anchor="middle" fill="#ff3366" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="28" opacity="0">K</text></g>
+      <g class="l4-b"><text x="26" y="34" text-anchor="middle" fill="#1a56f0" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="28" opacity="0">K</text></g>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Cyberpunk glitch effect with color split</h3>
+</div>
+
+<!-- LOGO 5: Circuit -->
+<div class="card">
+  <div class="num">Option 5 — Circuit Board</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <rect x="4" y="4" width="44" height="44" rx="10" fill="#0f172a"/>
+      <path class="l5-path" d="M10,26 L18,26 L18,14 L34,14 L34,26 L42,26 M18,26 L18,38 L34,38 L34,26" stroke="#1a56f0" stroke-width="1.5" fill="none"/>
+      <circle class="l5-dot" cx="18" cy="14" r="2" fill="#7c3aed"/>
+      <circle class="l5-dot" cx="34" cy="14" r="2" fill="#7c3aed" style="animation-delay:.3s"/>
+      <circle class="l5-dot" cx="18" cy="38" r="2" fill="#7c3aed" style="animation-delay:.6s"/>
+      <circle class="l5-dot" cx="34" cy="38" r="2" fill="#7c3aed" style="animation-delay:.9s"/>
+      <text x="26" y="31" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="16">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Circuit traces with pulsing nodes</h3>
+</div>
+
+<!-- LOGO 6: Morphing blob -->
+<div class="card">
+  <div class="num">Option 6 — Morphing Blob</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <defs><linearGradient id="lg6" x1="0" y1="0" x2="52" y2="52"><stop offset="0%" stop-color="#1a56f0"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0ea86e"/></linearGradient></defs>
+      <path class="l6-blob" d="M26,8 C38,8 44,14 44,26 C44,38 38,44 26,44 C14,44 8,38 8,26 C8,14 14,8 26,8Z" fill="url(#lg6)"/>
+      <text x="26" y="33" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="24">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Organic shape-shifting gradient blob</h3>
+</div>
+
+<!-- LOGO 7: Neon glow -->
+<div class="card">
+  <div class="num">Option 7 — Neon Glow</div>
+  <div class="logo-row">
+    <svg class="l7-glow" width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <rect x="4" y="4" width="44" height="44" rx="10" fill="none" stroke="#1a56f0" stroke-width="2"/>
+      <rect x="8" y="8" width="36" height="36" rx="7" fill="none" stroke="#7c3aed" stroke-width="1" opacity=".5"/>
+      <text x="26" y="34" text-anchor="middle" fill="#1a56f0" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="26">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Neon wireframe with breathing glow</h3>
+</div>
+
+<!-- LOGO 8: 3D Cube -->
+<div class="card">
+  <div class="num">Option 8 — 3D Cube</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <g class="l8-cube">
+        <polygon class="l8-face1" points="26,6 44,16 44,36 26,46" fill="#1a56f0" opacity=".8"/>
+        <polygon class="l8-face2" points="26,6 8,16 8,36 26,46" fill="#7c3aed" opacity=".5"/>
+        <polygon points="8,16 26,6 44,16 26,26" fill="#0ea86e" opacity=".6"/>
+      </g>
+      <text x="26" y="32" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="14">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Rotating isometric cube</h3>
+</div>
+
+<!-- LOGO 9: Shield scan -->
+<div class="card">
+  <div class="num">Option 9 — Shield Scan</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <defs><linearGradient id="lg9" x1="0" y1="0" x2="52" y2="52"><stop offset="0%" stop-color="#1a56f0"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient><clipPath id="shield9"><path d="M26,4 L44,12 L44,28 C44,38 36,46 26,48 C16,46 8,38 8,28 L8,12Z"/></clipPath></defs>
+      <path d="M26,4 L44,12 L44,28 C44,38 36,46 26,48 C16,46 8,38 8,28 L8,12Z" fill="url(#lg9)"/>
+      <g clip-path="url(#shield9)"><rect class="l9-scan" x="6" y="20" width="40" height="3" fill="#fff" opacity=".3" rx="1"/></g>
+      <text x="26" y="32" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="20">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Security shield with scanning line</h3>
+</div>
+
+<!-- LOGO 10: Spinning ring + dot -->
+<div class="card">
+  <div class="num">Option 10 — Satellite Ring</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <defs><linearGradient id="lg10" x1="0" y1="0" x2="52" y2="52"><stop offset="0%" stop-color="#1a56f0"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
+      <circle cx="26" cy="26" r="12" fill="url(#lg10)"/>
+      <text x="26" y="31.5" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="16">K</text>
+      <g style="animation:l3Orbit1 3s linear infinite;transform-origin:26px 26px">
+        <circle cx="26" cy="5" r="3" fill="#0ea86e"/>
+      </g>
+      <circle cx="26" cy="26" r="21" stroke="#1a56f033" stroke-width="1" fill="none"/>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Orbiting satellite dot around core</h3>
+</div>
+
+<!-- LOGO 11: Radar pulse -->
+<div class="card">
+  <div class="num">Option 11 — Radar Pulse</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <circle class="l11-ring1" cx="26" cy="26" r="4" fill="none" stroke="#1a56f0" stroke-width="1"/>
+      <circle class="l11-ring2" cx="26" cy="26" r="4" fill="none" stroke="#7c3aed" stroke-width="1"/>
+      <circle class="l11-ring3" cx="26" cy="26" r="4" fill="none" stroke="#0ea86e" stroke-width="1"/>
+      <circle cx="26" cy="26" r="10" fill="#1a56f0"/>
+      <text x="26" y="31" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="14">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Expanding radar pulse rings</h3>
+</div>
+
+<!-- LOGO 12: Geometric K -->
+<div class="card">
+  <div class="num">Option 12 — Geometric K</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <rect x="4" y="4" width="44" height="44" rx="10" fill="#0f172a"/>
+      <line x1="16" y1="12" x2="16" y2="40" stroke="#1a56f0" stroke-width="3.5" stroke-linecap="round"/>
+      <line class="l12-arm1" x1="16" y1="26" x2="38" y2="12" stroke="#7c3aed" stroke-width="3.5" stroke-linecap="round"/>
+      <line class="l12-arm2" x1="16" y1="26" x2="38" y2="40" stroke="#0ea86e" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Abstract K with animated arms</h3>
+</div>
+
+<!-- LOGO 13: Neural network -->
+<div class="card">
+  <div class="num">Option 13 — Neural Network</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <line x1="12" y1="14" x2="26" y2="26" stroke="#1a56f044" stroke-width="1"/>
+      <line x1="12" y1="38" x2="26" y2="26" stroke="#1a56f044" stroke-width="1"/>
+      <line x1="40" y1="14" x2="26" y2="26" stroke="#7c3aed44" stroke-width="1"/>
+      <line x1="40" y1="38" x2="26" y2="26" stroke="#7c3aed44" stroke-width="1"/>
+      <line x1="12" y1="14" x2="40" y2="14" stroke="#0ea86e33" stroke-width="1"/>
+      <line x1="12" y1="38" x2="40" y2="38" stroke="#0ea86e33" stroke-width="1"/>
+      <circle class="l13-node" cx="26" cy="26" r="8" fill="#1a56f0"/>
+      <circle class="l13-node" cx="12" cy="14" r="3" fill="#1a56f0"/>
+      <circle class="l13-node" cx="40" cy="14" r="3" fill="#7c3aed"/>
+      <circle class="l13-node" cx="12" cy="38" r="3" fill="#1a56f0"/>
+      <circle class="l13-node" cx="40" cy="38" r="3" fill="#7c3aed"/>
+      <text x="26" y="31" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="12">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Neural nodes with pulsing connections</h3>
+</div>
+
+<!-- LOGO 14: Infinity loop -->
+<div class="card">
+  <div class="num">Option 14 — Infinity Flow</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <defs><linearGradient id="lg14" x1="0" y1="0" x2="52" y2="0"><stop offset="0%" stop-color="#1a56f0"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0ea86e"/></linearGradient></defs>
+      <path class="l14-path" d="M26,26 C26,18 32,12 38,12 C44,12 48,18 48,26 C48,34 44,40 38,40 C32,40 26,34 26,26 C26,18 20,12 14,12 C8,12 4,18 4,26 C4,34 8,40 14,40 C20,40 26,34 26,26Z" stroke="url(#lg14)" stroke-width="2.5" fill="none"/>
+      <text x="26" y="31" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="12">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Flowing infinity symbol with gradient</h3>
+</div>
+
+<!-- LOGO 15: Stacked layers -->
+<div class="card">
+  <div class="num">Option 15 — Cloud Layers</div>
+  <div class="logo-row">
+    <svg width="48" height="48" viewBox="0 0 52 52" fill="none">
+      <g class="l15-layer">
+        <polygon points="26,10 46,20 26,30 6,20" fill="#1a56f0" opacity=".9"/>
+      </g>
+      <g class="l15-layer l15-l2">
+        <polygon points="26,18 46,28 26,38 6,28" fill="#7c3aed" opacity=".6"/>
+      </g>
+      <g class="l15-layer l15-l3">
+        <polygon points="26,26 46,36 26,46 6,36" fill="#0ea86e" opacity=".4"/>
+      </g>
+      <text x="26" y="28" text-anchor="middle" fill="#fff" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="12">K</text>
+    </svg>
+    <span>K<em>tech</em>ify</span>
+  </div>
+  <h3>Floating isometric cloud layers</h3>
+</div>
+
+</div>
+</body>
+</html>
