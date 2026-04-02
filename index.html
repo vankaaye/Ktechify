@@ -41,7 +41,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 .nav{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:background .4s,box-shadow .4s,backdrop-filter .4s;padding:20px 0}
 .nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:0 1px 12px rgba(0,0,0,.08);padding:14px 0}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--font-heading);font-size:1.6rem;font-weight:800;color:#fff;transition:color .4s}
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:var(--font-heading);font-size:1.6rem;font-weight:800;color:#fff;transition:color .4s;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.nav.scrolled .nav-logo{text-shadow:none}
 .nav.scrolled .nav-logo{color:var(--ink)}
 .nav-logo svg{width:48px;height:48px}
 
@@ -56,7 +57,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 .logo-orbit{animation:logoSpin 12s linear infinite;transform-origin:26px 26px}
 
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{font-size:.925rem;font-weight:500;color:rgba(255,255,255,.85);transition:color .3s}
+.nav-links a{font-size:.925rem;font-weight:500;color:rgba(255,255,255,.85);transition:color .3s;text-shadow:0 1px 6px rgba(0,0,0,.3)}
+.nav.scrolled .nav-links a{text-shadow:none}
 .nav.scrolled .nav-links a{color:var(--ink)}
 .nav-links a:hover{color:#fff}
 .nav.scrolled .nav-links a:hover{color:var(--blue)}
@@ -88,12 +90,12 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#0a0c14}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;animation:heroZoom 20s ease-in-out infinite alternate}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,12,20,.85) 0%,rgba(10,12,20,.4) 50%,rgba(10,12,20,.2) 100%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,12,20,.92) 0%,rgba(10,12,20,.75) 50%,rgba(10,12,20,.6) 100%)}
 @keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
 .hero-content{position:relative;z-index:2;max-width:700px;color:#fff;padding:160px 0 100px}
-.hero-content h1{font-size:clamp(2.8rem,6vw,4.5rem);font-weight:800;margin:20px 0 24px;letter-spacing:-.03em;line-height:1.05}
+.hero-content h1{font-size:clamp(2.8rem,6vw,4.5rem);font-weight:800;margin:20px 0 24px;letter-spacing:-.03em;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,.5)}
 .hero-content h1 span{background:linear-gradient(90deg,var(--blue),var(--violet),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-content p{font-size:1.2rem;color:rgba(255,255,255,.7);max-width:540px;margin-bottom:40px;line-height:1.7}
+.hero-content p{font-size:1.2rem;color:rgba(255,255,255,.7);max-width:540px;margin-bottom:40px;line-height:1.7;text-shadow:0 1px 8px rgba(0,0,0,.4)}
 .hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:60px}
 .hero-stats{display:flex;gap:48px}
 .hero-stat{text-align:left}
@@ -106,11 +108,11 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 /* ===== FULL-WIDTH IMAGE DIVIDERS ===== */
 .img-divider{position:relative;height:60vh;min-height:400px;overflow:hidden}
 .img-divider img{width:100%;height:100%;object-fit:cover;transition:transform .1s linear}
-.img-divider::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,20,.6),rgba(10,12,20,.7))}
+.img-divider::after{content:'';position:absolute;inset:0;background:rgba(10,12,20,.7)}
 .img-divider-content{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center}
 .divider-text{text-align:center;color:#fff;max-width:700px;padding:0 24px}
-.divider-text h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;margin-bottom:16px}
-.divider-text p{font-size:1.1rem;color:rgba(255,255,255,.7);margin-bottom:28px}
+.divider-text h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+.divider-text p{font-size:1.1rem;color:rgba(255,255,255,.7);margin-bottom:28px;text-shadow:0 1px 8px rgba(0,0,0,.4)}
 
 /* ===== MARQUEE ===== */
 .marquee-section{background:#111827;padding:32px 0;overflow:hidden}
