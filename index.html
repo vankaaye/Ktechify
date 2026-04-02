@@ -79,7 +79,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 .pill-blue{background:rgba(26,86,240,.15);color:#6ea8ff}
 .pill-violet{background:rgba(124,58,237,.15);color:#b794f6}
 .pill-green{background:rgba(14,168,110,.15);color:#6ee7b7}
-.pill-dark{background:rgba(10,12,20,.08);color:var(--ink)}
+.pill-dark{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
 .pill-white{background:rgba(255,255,255,.15);color:#fff}
 .chip{display:inline-block;padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:500;background:var(--bg-alt);color:var(--muted)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
@@ -113,18 +113,36 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 .divider-text p{font-size:1.1rem;color:rgba(255,255,255,.7);margin-bottom:28px}
 
 /* ===== MARQUEE ===== */
-.marquee-section{background:var(--bg-alt);padding:32px 0;overflow:hidden}
-.marquee-label{text-align:center;font-size:.8rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.marquee-section{background:#111827;padding:32px 0;overflow:hidden}
+.marquee-label{text-align:center;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
 .marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
 .marquee-track:hover{animation-play-state:paused}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.marquee-item{flex-shrink:0;padding:0 48px;font-size:1.1rem;font-weight:600;color:var(--muted);opacity:.5;white-space:nowrap}
+.marquee-item{flex-shrink:0;padding:0 48px;font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.4);opacity:.7;white-space:nowrap}
 
 /* ===== SECTIONS ===== */
 .section{padding:100px 0}
 .section-header{text-align:center;max-width:640px;margin:0 auto 60px}
 .section-header h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
 .section-header p{font-size:1.05rem;color:var(--muted)}
+/* Dark sections */
+.section-dark{background:#111827;color:#fff}
+.section-dark .section-header p{color:rgba(255,255,255,.6)}
+.section-dark .card{background:#1e293b;border-color:transparent}
+.section-dark .card:hover{border-color:var(--blue);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+.section-dark .card-body h3{color:#fff}
+.section-dark .card-body p{color:rgba(255,255,255,.6)}
+.section-dark .chip{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)}
+.section-dark .split-text h2{color:#fff}
+.section-dark .split-text p.sub{color:rgba(255,255,255,.6)}
+.section-dark .feature-list h4{color:#fff}
+.section-dark .feature-list .desc{color:rgba(255,255,255,.55)}
+.section-dark .feature-icon{background:rgba(26,86,240,.15)}
+.section-dark .case-stat .label{color:rgba(255,255,255,.5)}
+.section-dark .insight-meta .date{color:rgba(255,255,255,.5)}
+.section-dark .contact-row{border-color:rgba(255,255,255,.1)}
+.section-dark .contact-row .label{color:rgba(255,255,255,.5)}
+.section-dark .contact-row .value{color:#fff}
 
 /* ===== SERVICE CARDS ===== */
 .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
@@ -172,15 +190,15 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 .insight-card p{font-size:.88rem}
 
 /* ===== TESTIMONIALS ===== */
-.testimonials{background:var(--bg-alt);padding:100px 0}
-.test-card{background:#fff;border-radius:16px;padding:32px;border:1px solid #e8ecf4;transition:all .3s ease}
-.test-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.testimonials{background:#111827;padding:100px 0;color:#fff}
+.test-card{background:#1e293b;border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,.06);transition:all .3s ease}
+.test-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .stars{color:#f59e0b;font-size:1rem;margin-bottom:16px;letter-spacing:2px}
-.test-card blockquote{font-size:1rem;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:24px}
+.test-card blockquote{font-size:1rem;font-style:italic;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:24px}
 .test-author{display:flex;align-items:center;gap:14px}
 .avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff}
-.test-author .name{font-weight:600;font-size:.9rem}
-.test-author .role{font-size:.8rem;color:var(--muted)}
+.test-author .name{font-weight:600;font-size:.9rem;color:#fff}
+.test-author .role{font-size:.8rem;color:rgba(255,255,255,.5)}
 
 /* ===== CTA BAND ===== */
 .cta-band{position:relative;padding:120px 0;text-align:center;color:#fff;overflow:hidden}
@@ -193,20 +211,20 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
 /* ===== CONTACT ===== */
-.contact{padding:100px 0;background:var(--bg)}
+.contact{padding:100px 0;background:#0f172a;color:#fff}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .contact-left h2{font-size:clamp(2rem,3.5vw,2.6rem);font-weight:800;margin-bottom:32px}
-.contact-row{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #eef1f6}
+.contact-row{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
 .contact-row:last-child{border-bottom:none}
 .contact-icon{width:44px;height:44px;border-radius:12px;background:rgba(26,86,240,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .contact-icon svg{width:18px;height:18px;color:var(--blue)}
-.contact-row .label{font-size:.8rem;color:var(--muted);margin-bottom:2px}
-.contact-row .value{font-weight:600;font-size:.95rem}
-.form-card{background:#fff;border-radius:16px;padding:40px;box-shadow:0 2px 20px rgba(0,0,0,.06);border:1px solid #eef1f6}
+.contact-row .label{font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:2px}
+.contact-row .value{font-weight:600;font-size:.95rem;color:#fff}
+.form-card{background:#1e293b;border-radius:16px;padding:40px;box-shadow:0 2px 20px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--ink)}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid #dde2ed;border-radius:10px;font-size:.9rem;font-family:var(--font-body);transition:border-color .2s;background:#fff;color:var(--ink)}
+.form-group label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:rgba(255,255,255,.7)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid rgba(255,255,255,.12);border-radius:10px;font-size:.9rem;font-family:var(--font-body);transition:border-color .2s;background:rgba(255,255,255,.05);color:#fff}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blue)}
 .form-group textarea{resize:vertical;min-height:100px}
 .form-card .btn{width:100%}
@@ -358,7 +376,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 </section>
 
 <!-- SERVICES -->
-<section class="section" id="services" style="background:var(--bg-alt)">
+<section class="section section-dark" id="services">
   <div class="container">
     <div class="section-header reveal">
       <span class="pill pill-blue" style="background:rgba(26,86,240,.1);color:var(--blue)">Our Capabilities</span>
@@ -402,7 +420,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 
 <!-- ===== IMAGE DIVIDER — Cloud ===== -->
 <div class="img-divider">
-  <img src="images/service-cloud.jpg" alt="" class="parallax-div">
+  <img src="images/divider-cloud.jpg" alt="" class="parallax-div">
   <div class="img-divider-content">
     <div class="divider-text reveal">
       <h2>Architecting for the future</h2>
@@ -425,7 +443,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 </section>
 
 <!-- WHY KTECHIFY -->
-<section class="section" style="background:var(--bg-alt)">
+<section class="section section-dark">
   <div class="container">
     <div class="split">
       <div class="reveal-left" style="overflow:hidden;border-radius:16px"><img src="images/why-us.jpg" alt="Team collaboration" style="width:100%;height:440px;object-fit:cover"></div>
@@ -459,7 +477,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 
 <!-- ===== IMAGE DIVIDER — Security ===== -->
 <div class="img-divider">
-  <img src="images/cyber-split.jpg" alt="" class="parallax-div">
+  <img src="images/divider-security.jpg" alt="" class="parallax-div">
   <div class="img-divider-content">
     <div class="divider-text reveal">
       <h2>Securing what matters most</h2>
@@ -470,7 +488,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 </div>
 
 <!-- CASE STUDIES -->
-<section class="section" id="cases">
+<section class="section section-dark" id="cases">
   <div class="container">
     <div class="section-header reveal">
       <span class="pill pill-dark">Results</span>
@@ -514,7 +532,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 
 <!-- ===== IMAGE DIVIDER — Transformation ===== -->
 <div class="img-divider">
-  <img src="images/service-it.jpg" alt="" class="parallax-div">
+  <img src="images/divider-transform.jpg" alt="" class="parallax-div">
   <div class="img-divider-content">
     <div class="divider-text reveal">
       <h2>Transforming legacy into advantage</h2>
@@ -525,7 +543,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 </div>
 
 <!-- INSIGHTS -->
-<section class="section" id="insights" style="background:var(--bg-alt)">
+<section class="section section-dark" id="insights">
   <div class="container">
     <div class="section-header reveal">
       <span class="pill pill-dark">Insights</span>
@@ -604,7 +622,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 <!-- CTA BAND — with background image -->
 <section class="cta-band">
   <div class="cta-band-bg">
-    <img src="images/why-us.jpg" alt="">
+    <img src="images/cta-bg.jpg" alt="">
   </div>
   <div class="container reveal-scale">
     <h2>Ready to transform your technology?</h2>
