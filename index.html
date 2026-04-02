@@ -89,9 +89,9 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 /* ===== FULL-WIDTH HERO ===== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#0a0c14}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;animation:heroKenBurns 25s ease-in-out infinite alternate}
+.hero-bg img{width:100%;height:100%;object-fit:cover;animation:heroKenBurns 12s ease-in-out infinite alternate}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,12,20,.92) 0%,rgba(10,12,20,.75) 50%,rgba(10,12,20,.6) 100%)}
-@keyframes heroKenBurns{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.12) translate(-1.5%,-1%)}100%{transform:scale(1.06) translate(1%,-0.5%)}}
+@keyframes heroKenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.15) translate(-2%,-1%)}}
 .hero-content{position:relative;z-index:2;max-width:700px;color:#fff;padding:160px 0 100px}
 .hero-content h1{font-size:clamp(2.8rem,6vw,4.5rem);font-weight:800;margin:20px 0 24px;letter-spacing:-.03em;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,.5)}
 .hero-content h1 span{background:linear-gradient(90deg,var(--blue),var(--violet),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -107,18 +107,13 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 
 /* ===== FULL-WIDTH IMAGE DIVIDERS ===== */
 .img-divider{position:relative;height:60vh;min-height:400px;overflow:hidden}
-.img-divider img{width:100%;height:100%;object-fit:cover;transform-origin:center center}
+.img-divider img{width:100%;height:100%;object-fit:cover;transform-origin:center center;animation:kb1 10s ease-in-out infinite alternate}
 .img-divider::after{content:'';position:absolute;inset:0;background:rgba(10,12,20,.7)}
-/* Ken Burns variants for each divider */
-.img-divider:nth-of-type(1) img{animation:kb1 22s ease-in-out infinite alternate}
-.img-divider:nth-of-type(2) img{animation:kb2 26s ease-in-out infinite alternate}
-.img-divider:nth-of-type(3) img{animation:kb3 20s ease-in-out infinite alternate}
-@keyframes kb1{0%{transform:scale(1.05) translate(0,0)}50%{transform:scale(1.15) translate(-2%,1%)}100%{transform:scale(1.08) translate(1.5%,-1%)}
-}
-@keyframes kb2{0%{transform:scale(1.08) translate(1%,0)}50%{transform:scale(1.14) translate(-1%,-1.5%)}100%{transform:scale(1.05) translate(0,1%)}
-}
-@keyframes kb3{0%{transform:scale(1.05) translate(-1%,0.5%)}50%{transform:scale(1.18) translate(1.5%,-0.5%)}100%{transform:scale(1.1) translate(-0.5%,1%)}
-}
+.img-divider.kb-2 img{animation:kb2 12s ease-in-out infinite alternate}
+.img-divider.kb-3 img{animation:kb3 9s ease-in-out infinite alternate}
+@keyframes kb1{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.15) translate(-2%,1%)}}
+@keyframes kb2{0%{transform:scale(1.05) translate(1%,0)}100%{transform:scale(1.18) translate(-1.5%,-1.5%)}}
+@keyframes kb3{0%{transform:scale(1) translate(-1%,0.5%)}100%{transform:scale(1.2) translate(2%,-1%)}}
 .img-divider-content{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center}
 .divider-text{text-align:center;color:#fff;max-width:700px;padding:0 24px}
 .divider-text h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
@@ -215,8 +210,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 /* ===== CTA BAND ===== */
 .cta-band{position:relative;padding:120px 0;text-align:center;color:#fff;overflow:hidden}
 .cta-band-bg{position:absolute;inset:0;z-index:0}
-.cta-band-bg img{width:100%;height:100%;object-fit:cover;animation:ctaKenBurns 30s ease-in-out infinite alternate}
-@keyframes ctaKenBurns{0%{transform:scale(1.05) translate(0,0)}50%{transform:scale(1.12) translate(1%,-1%)}100%{transform:scale(1.08) translate(-1.5%,0.5%)}}
+.cta-band-bg img{width:100%;height:100%;object-fit:cover;animation:ctaKenBurns 11s ease-in-out infinite alternate}
+@keyframes ctaKenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.15) translate(1.5%,-1%)}}
 .cta-band-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,86,240,.9),rgba(124,58,237,.85))}
 .cta-band .container{position:relative;z-index:2}
 .cta-band h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
@@ -489,7 +484,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 </section>
 
 <!-- ===== IMAGE DIVIDER — Security ===== -->
-<div class="img-divider">
+<div class="img-divider kb-2">
   <img src="images/divider-security.jpg" alt="" class="parallax-div">
   <div class="img-divider-content">
     <div class="divider-text reveal">
@@ -544,7 +539,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15}
 </section>
 
 <!-- ===== IMAGE DIVIDER — Transformation ===== -->
-<div class="img-divider">
+<div class="img-divider kb-3">
   <img src="images/divider-transform.jpg" alt="" class="parallax-div">
   <div class="img-divider-content">
     <div class="divider-text reveal">
